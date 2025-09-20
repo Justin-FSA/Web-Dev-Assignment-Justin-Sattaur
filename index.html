@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answering Legal</title>
+    <script src="index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/src/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/Checkmark.png">
+    <style>
+        body {
+            font-family: 'montserrat';
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="flex justify-end mb-0 hidden md:flex" >
+        <code class="mr-3 text-[#999999] underline font-semibold text-xl">Support</code>
+        <code class="text-[#0360E6] font-bold text-xl">(631) 686-9700</code>
+    </div>
+    <header class="flex items-center justify-between">
+        <div class="flex-shrink-0">
+            <img class="w-80 h-auto" src="assets/Answering_LegalTM_Blue.png" alt="Answering Legal Logo">
+        </div>
+        <!--Drop down buttons-->
+        <nav class="flex space-x-16 text-[#161641] hidden md:flex">
+            <!--Products-->
+            <div class="relative">
+                <button id="productsBtn"class="flex items-center font-semibold text-xl border-[#3CCED7] hover:text-[#0360E6]">Products
+                    <img id="productsArrow" src="assets/dropdown-arrow-svgrepo-com.svg" class="w-5 h-auto">
+                </button>
+                <div id="productsDropdown" class="hidden absolute">
+                    <div>Product 1</div>
+                    <div>Product 2</div>
+                </div>
+            </div>
+            <!--About-->
+            <div class="relative">
+                <button id="aboutBtn" class="flex items-center font-semibold text-xl border-[#3CCED7] hover:text-[#0360E6]" onclick="toggleDropdown('aboutDropdown', 'aboutArrow', 'aboutBtn')">About
+                    <img id="aboutArrow" src="assets/dropdown-arrow-svgrepo-com.svg" class="w-5 h-auto">
+                </button>
+                <div id="aboutDropdown" class="hidden absolute">
+                    <div>About 1</div>
+                    <div>About 2</div>
+                </div>
+            </div>
+            <!--Resources-->
+            <div class="relative" id="dropdownButton">
+                <button id="resourcesBtn" class="flex items-center font-semibold text-xl border-[#3CCED7] hover:text-[#0360E6]" onclick="toggleDropdown('resourcesDropdown', 'resourcesArrow', 'resourcesBtn')">Resources
+                    <img id="resourcesArrow" src="assets/dropdown-arrow-svgrepo-com.svg" class="w-5 h-auto">
+                </button>
+                <div id="resourcesDropdown" class="hidden absolute">
+                    <div>Resources 1</div>
+                    <div>Resources 2</div>
+                </div>
+            </div>
+            <button class="font-semibold text-xl hover:text-[#0360E6]">Pricing</button>
+        </nav>
+        <!--Mobile Button-->
+        <button class="md:hidden text-7xl">☰</button>
+        <!--Search Button-->
+        <div class="flex items-center space-x-4 hidden md:flex">
+            <button class="w-16 h-16">
+            <img src="assets/Search (1).svg">
+        </button>
+            <button class="text-white bg-[#0360E6] rounded-xl px-4 py-3 font-bold text-xl hover:bg-[#161641]">Try for Free</button>
+        </div>
+    </header>
+    <!--Computer Hero Div-->
+    <div class="relative h-screen bg-cover bg-center -mx-4 hidden md:flex" style="background-image: url('assets/LandingHero.jpg');">
+        <div class="absolute inset-0">
+            <div class="relative z-10 flex flex-col items-start h-full text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4  pl-[10%] pr-[60%] mt-16 font-montserrat">
+                    We’re more than an  answering service.
+                </h1> 
+                <p class="text-4xl pl-[10%] pr-[50%] mt-4 mb-4">
+                    Answering Legal has everything you need to make sure your firm never misses another opportunity.
+                </p>
+
+                <div class="flex flex-col items-start pl-[10%]">
+                    <span class="text-xL md:text-2xl font-bold">
+                        Excellent 4.84
+                    </span>
+                    <div class="flex space-x-2 text-yellow-400 text-lg md:text-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                    </div>
+                    <div class="text-xL mb-4">
+                        based on 230 reviews
+                    </div>
+                </div>
+                    <button class="text-white bg-[#0360E6] rounded-xl px-3 py-2 text-2xl hover:bg-[#161641] ml-[10%]">
+                        See our pricing
+                    </button>
+                <div class="text-4xl text-center border-b-2 border-[#3CCED7] text-white mx-auto mt-40 p-8 px-[25%]">
+                    Here's what we can do for your law firm
+                </div>       
+            </div> 
+        </div>
+    </div>
+    <!--Mobile Hero Div-->
+    <div class="md:hidden">
+        <img src="assets/LandingHeroMobile.jpg">
+            <div class="bg-[#161641] text-white">
+                <div class="flex items-center justify-center w-full p-5">
+                    <div class="flex-1 text-center font-sembold text-3xl">
+                    Excellent 4.84
+                    </div>
+                    <div class="flex-1 text-right flex flex-col items-center">
+                        <div class="flex space-x-1 text-yellow-500 text-xl md:text-2xl mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.657 12 1 7.91l6.061-.881L10 2l2.939 5.029L19 7.91 14.343 12l1.535 6.09z"/></svg>
+                        </div class="text-lg">
+                    Based on 230 reviews
+                    </div>
+                </div>
+            <div>
+                <div class="text-5xl font-bold text-center pb-5">
+                    We’re more than an answering service
+                </div>
+                <div class="text-center text-2xl mx-15">
+                    Answering Legal has everything you need to make sure your firm never misses another opportunity.
+                </div>
+                <div class="flex justify-center m-5">
+                <button class="text-white bg-[#0360E6] rounded-2xl p-3 px-40 m-6 text-xl hover:bg-[#161641]">
+                    See our pricing
+                </button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="text-4xl text-center border-b-4 border-[#3CCED7] text-[#161641] mx-20 p-5 font-bold md:hidden">
+            Here's what we can do for your law firm
+        </div> 
+    <!--Large Screen Boxes-->
+    <div class="relative -mt-20 flex justify-center gap-8 px-20 hidden md:flex">
+        <!--Box 1-->
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-96 text-center flex flex-col justify-center items-center">
+            <div class="w-32 h-32 mb-6">
+                <img src="assets/AL_2ColorIcon-AnsweringService.svg">
+        </div>
+            <h2 class="text-3xl font-bold border-b-2 mb-2 pb-2 border-[#3CCED7]">Legal answering service</h2>
+            <p class="text-lg mt-6">With 24/7 legal intake, you’ll never miss a potential client’s call.</p>
+        </div>
+        <!--Box 2-->
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-96 text-center flex flex-col justify-center items-center">
+            <div class="w-32 h-32 mb-6">
+                <img src="assets/AL_2ColorIcon-Chatbot.svg">
+            </div>
+            <h2 class="text-3xl font-bold border-b-2 mb-2 pb-2 border-[#3CCED7]">AI intake chatbot</h2>
+            <p class="text-lg mt-6">Turn web leads into clients with a chatbot powered by the latest in AI technology.</p>
+        </div>
+        <!--Box 3-->
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-96 text-center flex flex-col justify-center items-center">
+            <div class="w-32 h-32 mb-6">
+                <img src="assets/AL_2ColorIcon-LVCv2.svg">
+            </div>
+            <h2 class="text-3xl font-bold border-b-2 mb-2 pb-2 border-[#3CCED7]">Live translation services</h2>
+            <p class="text-lg mt-6">Break through the language barrier and schedule video conferences with live interpreters.</p>
+        </div>
+    </div>
+    <!--Small Screen Boxes-->
+    <!--Box 1-->
+    <div class="flex justify-center md:hidden">
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-96 text-center flex flex-col justify-center items-center shadow-2xl border-2 m-3">
+            <div class="w-32 h-32 mb-6">
+            <img src="assets/AL_2ColorIcon-AnsweringService.svg">
+        </div>
+        <h2 class="text-3xl font-bold border-b-2 mb-2 pb-2 border-[#3CCED7]">Legal answering service</h2>
+        <p class="text-lg mt-6">With 24/7 legal intake, you’ll never miss a potential client’s call.</p>
+    </div>
+    </div>
+    <!--Box 2-->
+    <div class="flex justify-center md:hidden">
+    <div class="bg-white rounded-2xl shadow-lg p-8 w-96 text-center flex flex-col justify-center items-center shadow-2xl border-2 m-3">
+        <div class="w-32 h-32 mb-6">
+            <img src="assets/AL_2ColorIcon-Chatbot.svg">
+        </div>
+            <h2 class="text-3xl font-bold border-b-2 mb-2 pb-2 border-[#3CCED7]">AI intake chatbot</h2>
+            <p class="text-lg mt-6">Turn web leads into clients with a chatbot powered by the latest in AI technology.</p>
+        </div>
+    </div>
+    <!--Box 3-->
+            <div class="flex justify-center md:hidden">
+            <div class="bg-white rounded-2xl shadow-lg p-8 w-96 text-center flex flex-col justify-center items-center shadow-2xl border-2 m-3">
+                <div class="w-32 h-32 mb-6">
+                    <img src="assets/AL_2ColorIcon-LVCv2.svg">
+                </div>
+                <h2 class="text-3xl font-bold border-b-2 mb-2 pb-2 border-[#3CCED7]">Live translation services</h2>
+                <p class="text-lg mt-6">Break through the language barrier and schedule video conferences with live interpreters.</p>
+            </div>
+        </div>
+        </div>
+    <!--Large Screen CRM Div-->
+    <div class="mt-12 p-8 flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 ">
+        <!--CRM Image-->
+        <div class="flex justify-start">
+            <img src="assets/CRM-Graphic.png" alt="CRM Graphic" class="w-[60%] ml-[20%]">
+        </div>
+        <!--CRM Text-->
+        <div class="hidden md:flex">
+        <div class="flex-1 space-y-6 text-left -ml-40 pr-[17%]">
+        <h3 class="text-4xl font-bold border-b-2 border-[#3CCED7] mb-2 pb-2 inline-block">
+            Your data's in good hands    
+        </h3>
+        <div class="text-2xl">
+            Our partnership with your CRM enables a seamless flow of information.
+        </div>
+        <div class="space-y-4 text-left">
+            <div class="flex items-start space-x-3">
+                <img src="assets/Checkmark.png" class="w-10 h-10 mx-3">
+                Answering Legal’s receptionists take down exactly the information you need.
+            </div>
+            <div class="flex items-start space-x-3">
+                <img src="assets/Checkmark.png"class="w-10 h-10 mx-3"> 
+                Through native API integrations with our proprietary software, we make sure it’s immediately where you need it to be.
+            </div>
+            <div class="flex items-start space-x-3">
+                <img src="assets/Checkmark.png"class="w-10 h-10 mx-3"> 
+                All you’ll have to do is open your CRM and follow up to secure your new client’s business.
+            </div>
+            <button class="text-white bg-[#0360E6] rounded-2xl p-3 mr-[65%] text-2xl font-bold hover:bg-[#161641]">
+                See our pricing
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!--Mobile Screen CRM Div-->
+    <div class="md:hidden m-10">
+        <div class="justify-center">
+            <h3 class="text-5xl font-bold border-b-2 border-[#3CCED7] mb-2 pb-2 inline-block">
+                Your data's in good hands    
+            </h3>
+            <div class="text-3xl pb-2">
+                Our partnership with your CRM enables a seamless flow of information.
+            </div>
+            <div class="space-y-4 text-left text-2xl mt-2">
+                <div class="flex items-start space-x-3">
+                    <img src="assets/Checkmark.png" class="w-10 h-10 mx-3">
+                    Answering Legal’s receptionists take down exactly the information you need.
+                </div>
+                <div class="flex items-start space-x-3">
+                    <img src="assets/Checkmark.png"class="w-10 h-10 mx-3"> 
+                    Through native API integrations with our proprietary software, we make sure it’s immediately where you need it to be.
+                </div>
+                <div class="flex items-start space-x-3">
+                    <img src="assets/Checkmark.png"class="w-10 h-10 mx-3"> 
+                    All you’ll have to do is open your CRM and follow up to secure your new client’s business.
+                </div>
+                <button class="text-white bg-[#0360E6] rounded-2xl p-4 px-16 ml-4 text-2xl hover:bg-[#161641]">
+                    See our pricing
+                </button>
+        </div>
+    </div>
+    <!--Large Screen Receptionist Div-->
+    <div class="mt-12 p-8 flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8 mx-[20%]">
+        <div class="flex-1 text-left space-y-4 hidden md:flex">
+        <h3 class="text-4xl font-bold border-b-2 border-[#3CCED7] mt-20 mb-2 pb-2 inline-block">
+            Design your perfect legal intake process
+        </h3>
+        <p class="text-lg">Get everything you need out of every new client call. The virtual receptionists at our legal intake call center will use your unique specifications to perform a legal intake for every new client caller.</p>
+        <button class="inline-block text-white bg-[#0360E6] rounded-2xl py-3 px-3 text-2xl font-bold hover:bg-[#161641]">
+            See our pricing
+        </button>
+    </div>
+        <div class="flex-1 flex justify-end">
+            <img src="assets/Receptionist_IMG.png" class="w-100">
+        </div>
+    </div>
+    <!--Mobile Screen Receptionist Div-->
+    <div class="mx-20 md:hidden">
+    <h3 class="text-4xl font-bold border-b-2 border-[#3CCED7] mt-20 mb-2 pb-2 inline-block">
+        Design your perfect legal intake process
+    </h3>
+    <p class="text-2xl">Get everything you need out of every new client call. The virtual receptionists at our legal intake call center will use your unique specifications to perform a legal intake for every new client caller.</p>
+    <button class="inline-block text-white bg-[#0360E6] rounded-2xl py-3 px-3 text-2xl font-bold hover:bg-[#161641] mt-4">
+        See our pricing
+    </button>
+    </div>
+    </div>
+    <!--Large Screen Articles Div-->
+    <h4 class="text-4xl font-bold text-center p-20 text-[#161641] ">
+        Want to learn more? Read our articles on legal intake.
+    </h4>
+    <div class="flex-1 flex justify-center gap-8 px-20 hidden md:flex">
+        <button class="w-20 h-auto"><img src="assets/left-arrow-next-svgrepo-com.svg"></button>
+    <div class="max-w-sm bg-white rounded-2xl shadow-xl border border-gray-200">
+        <img src="assets/Article_img_placeholder.jpg" class="w-full h-48 object-cover rounded-t-2xl">
+        <div class="p-4 space-y-3">
+            <p class="text-sm font-bold text-[#0360E6] uppercase">Lawyer Wellness</p>
+            <div class="border-l-2 border-[#3CCED7] pl-2">
+            <p class="text-sm text-[#999999]">June 6, 2024</p>
+            <h3 class="text-lg font-bold text-gray-900">How Viable Is Remote Work For Lawyers?</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine dur...</p>
+            <a href="#" class="text-[#0360E6] font-bold text-sm hover:underline"> [Read More>]</a>
+        </div>
+    </div>
+    <div class="max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <img src="assets/Article_img_placeholder.jpg" class="w-full h-48 object-cover rounded-t-2xl">
+        <div class="p-4 space-y-3">
+            <p class="text-sm font-bold text-[#0360E6] uppercase">Lawyer Wellness</p>
+            <div class="border-l-2 border-[#3CCED7] pl-2">
+                <p class="text-sm text-[#999999]">June 6, 2024</p>
+                <h3 class="text-lg font-bold text-gray-900">How Viable Is Remote Work For Lawyers?</h3>
+                </div>
+            <p class="text-sm text-gray-600 leading-relaxed">This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine dur...</p>
+            <a href="#" class="text-[#0360E6] font-bold text-sm hover:underline"> [Read More>]</a>
+        </div>
+    </div>
+    <div class="max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <img src="assets/Article_img_placeholder.jpg" class="w-full h-48 object-cover rounded-t-2xl">
+        <div class="p-4 space-y-3">
+            <p class="text-sm font-bold text-[#0360E6] uppercase">Lawyer Wellness</p>
+            <div class="border-l-2 border-[#3CCED7] pl-2">
+                <p class="text-sm text-[#999999]">June 6, 2024</p>
+                <h3 class="text-lg font-bold text-gray-900">How Viable Is Remote Work For Lawyers?</h3>
+                </div>
+            <p class="text-sm text-gray-600 leading-relaxed">This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine dur...</p>
+            <a href="#" class="text-[#0360E6] font-bold text-sm hover:underline"> [Read More>]</a>
+        </div>
+    </div>
+    <button class="w-20 h-auto"><img src="assets/right-arrow-next-svgrepo-com.svg"></button>
+</div>
+<!--Small Screen Article Div-->
+<div class="flex justify-center mb-10 -mt-10 md:hidden">
+    <button class="w-14 h-auto mr-6"><img src="assets/left-arrow-next-svgrepo-com.svg"></button>
+    <button class="w-14 h-auto ml-6"><img src="assets/right-arrow-next-svgrepo-com.svg"></button>
+</div>
+    <div class="flex justify-center md:hidden">
+        <div class="max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            <img src="assets/Article_img_placeholder.jpg" class="w-full h-48 object-cover rounded-t-2xl">
+            <div class="p-4 space-y-3">
+                <p class="text-sm font-bold text-[#0360E6] uppercase">Lawyer Wellness</p>
+                <div class="border-l-2 border-[#3CCED7] pl-2">
+                    <p class="text-sm text-[#999999]">June 6, 2024</p>
+                    <h3 class="text-lg font-bold text-gray-900">How Viable Is Remote Work For Lawyers?</h3>
+                    </div>
+                <p class="text-sm text-gray-600 leading-relaxed">This month on the Answering Legal blog, we’ll be covering remote work in the legal world. Since the rapid adaptations required by quarantine dur...</p>
+                <a href="#" class="text-[#0360E6] font-bold text-sm hover:underline"> [Read More>]</a>
+            </div>
+        </div>
+    </div>
+<!--Blog Button-->
+<div class="flex justify-center m-10">
+    <button class="font-bold flex justify-center p-3 px-5 text-2xl text-white bg-[#0360E6] rounded-2xl hover:bg-[#161641]">Go to blog</button>
+</div>
+<!--Blue Background-->
+<div class="bg-[#161641] -mx-4">
+<!--Sign Up Div-->
+<div class="flex justify-center py-20">
+    <div class="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
+        <!--Text-->
+        <div class="md:w-1/2 flex flex-col justify-center h-full mb-8 md:mb-0 mr-24">
+            <h2 class="text-white text-5xl font-bold mb-4">
+                24/7 coverage at a fraction of the cost of in-house receptionists.
+            </h2>
+            <p class="text-white text-xl font-semibold">
+                Don’t believe us? Fill out the form on the right, and we’ll take you to our pricing page, where you can find out just how little 24/7 legal intake will cost you.
+            </p>
+        </div>
+        <!--Sign Up Form-->
+        <div class="bg-white rounded-2xl p-6 md:w-1/2 w-full text-base">
+            <p class="text-2xl font-semibold">Tell us about yourself. We’ll show you all of our pricing information on the next page.</p>
+            <div id="formText" class="hidden text-red-600 mt-4">
+                Please fill in a valid value for all required fields<br>
+                Fields: <b>Name, Company Name, Email, Phone</b>
+            </div>
+            <div id="successText" class="text-semibold m-2 hidden text-green-500">
+                Thank you! Your form has been submitted successfully
+            </div>
+            <form id="signupForm" class="m-5">
+                <p class="font-semibold">First Name*</p><input type="text" placeholder="   First Name*" class="my-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0360E6] border-black">
+                <p class="font-semibold">Last Name*</p><input type="text" placeholder="   Last Name*" class="my-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0360E6] border-black">
+                <p class="font-semibold">Company Name*</p><input type="text" placeholder="   Company Name*" class="my-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0360E6] border-black">
+                <p class="font-semibold">Email*</p><input type="email" placeholder="   Email*" class="my-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0360E6] border-black">
+                <p class="font-semibold">Cell Phone*</p><input type="tel" placeholder="   Cell Phone*" class="my-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0360E6] border-black">
+                <div class="flex justify-center"><button type="submit" class="bg-[#0360E6] text-white font-bold p-3 rounded-lg hover:bg-[#161641] mt-4 text-xl">See plans & pricing</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Large Screen Have Questions Div-->
+<div class="text-white flex flex-col text-center p-10 hidden md:flex">
+    <h3 class="text-2xl font-bold mx-[38%]">Have questions? Our team is here to help. Call 631-400-8888</h3>
+    <p class="text-[#3CCED7] font-bold text-sm">Monday to Friday from 9 am to 7 pm EST.</p>
+</div>
+<!--Mobile Screen Have Question Div-->
+<div class="text-white md:hidden">
+    <h3 class="text-3xl font-bold text-center mx-24">Have questions? Our team is here to help. Call 631-400-8888</h3>
+    <p class="text-[#3CCED7] font-bold text-sm text-center mt-1">Monday to Friday from 9 am to 7 pm EST.</p>
+</div>
+<!--Large Screen Footer Div-->
+<div class="text-white flex flex-wrap gap-12 justify-center border-b-2 border-t-2 border-[#162B53] py-10 px-8 inline-block max-w-8xl mx-[10%] hidden md:flex">
+    <div>
+        <h1 class="text-2xl font-bold mb-4">Our service</h1>
+        <div class="flex-col space-y-3">
+        <div>Who We Serve</div>
+        <div>FAQS</div>
+        <div>Tutorials</div>
+        <div>What Is An Answering Service?</div>
+        <div>What Is A Legal Intake Receptionist?</div>
+        <div>What Is A Virtual Receptionist?</div>
+        </div>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mb-4">Company</h1>
+        <div class="flex-col space-y-3">
+        <div>Meet The Team</div>
+        <div>Our Authors</div>
+    </div>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mb-4">Partnership</h1>
+        <div class="flex-col space-y-3">
+        <div>Integrations</div>
+        <div>Affiliate Program</div>
+        <div>Law Firm Marketing</div>
+        </div>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mb-4">Resources</h1>
+        <div class="flex-col space-y-3">
+        <div>Blog</div>
+        <div>Podcast</div>
+        <div>Videos</div>
+        <div>Let's Talk Legal</div>
+        <div>Marketing</div>
+        <div>The Answering Legal</div>
+        <div>Book Club</div>
+        <div>Top Legal Softwares</div>
+    </div>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mb-4">Support</h1>
+        <div class="flex-col space-y-3">
+        <div>Contact Us</div>
+        <div>Submit A Ticket</div>
+        <div>Privacy Policy</div>
+        <div>Terms Of Service</div>
+        <div>Employment</div>
+        <div>Opportunities</div>
+    </div>
+    </div>
+    <div>
+        <h1 class="text-2xl font-bold mb-4">Follow US</h1>
+        <div class="flex-col space-y-3">
+        <div>Twitter</div>
+        <div>Facebook</div>
+        <div>Instagram</div>
+        <div>LinkedIn</div>
+    </div>
+    </div>
+</div>
+<!--Mobile Screen Footer-->
+<div class="text-white border-b-2 border-t-2 border-[#162B53] py-10 px-8 mt-10 max-w-8xl mx-[10%] text-2xl font-bold md:hidden">
+    <div class="flex justify-around mb-4">
+        <p>Our Service</p> <p>Company</p>
+    </div>
+    <div class="flex justify-around my-4">
+        <p>Partnerships</p> <p>Resources</p>
+    </div>
+    <div class="flex justify-around mt-4">
+        <p>Support</p> <p>Follow Us</p>
+    </div>
+</div>
+<div class="text-white flex justify-center m-10 p-10 -mb-40 font-bold text-sm">
+    © 2024 Answering Legal · All Rights Reserved
+</div>
+</div>
+</body>
+</html>
