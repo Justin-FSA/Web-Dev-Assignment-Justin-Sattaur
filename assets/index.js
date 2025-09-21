@@ -18,6 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    var aboutBtn = document.getElementById("aboutBtn");
+    if (aboutBtn) {
+        aboutBtn.addEventListener("click", function () {
+            toggleDropdown("aboutDropdown", "aboutArrow", "aboutBtn");
+        });
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
+    var resourcesBtn = document.getElementById("resourcesBtn");
+    if (resourcesBtn) {
+        resourcesBtn.addEventListener("click", function () {
+            toggleDropdown("resourcesDropdown", "resourcesArrow", "resourcesBtn");
+        });
+    }
+});
 // Sign-Up Form functionality
 document.addEventListener("DOMContentLoaded", function () {
     var form = document.getElementById("signupForm");
