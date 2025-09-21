@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 markInvalid(element);
                 valid = false;
             }
-            // Phone validation (basic: digits only, 10+ digits)
+            // Phone validation
             if (element.type === "tel" && !/^\d{10,}$/.test(element.value)) {
                 markInvalid(element);
                 valid = false;
