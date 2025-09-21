@@ -10,6 +10,7 @@ function toggleDropdown(dropdownId, arrowId, btnId) {
     if (btn)
         btn.classList.toggle("border-b-2");
 }
+// Products Button
 document.addEventListener("DOMContentLoaded", function () {
     var productsBtn = document.getElementById("productsBtn");
     if (productsBtn) {
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+// About Button
 document.addEventListener("DOMContentLoaded", function () {
     var aboutBtn = document.getElementById("aboutBtn");
     if (aboutBtn) {
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+// Resource Button
 document.addEventListener("DOMContentLoaded", function () {
     var resourcesBtn = document.getElementById("resourcesBtn");
     if (resourcesBtn) {
@@ -73,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
             formText.classList.add("text-red-600", "font-semibold");
             return;
         }
-        // Success
         successText.classList.remove("hidden");
         alert("Form submitted successfully!");
         form.reset();
