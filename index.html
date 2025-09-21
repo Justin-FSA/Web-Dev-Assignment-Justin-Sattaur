@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Answering Legal</title>
-    <script src="public/index.js"></script>
+    <!--<script src="public\index.js"></script>-->
     <script src="https://cdn.tailwindcss.com"></script>
     <!--<link href="/src/style.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -486,4 +486,96 @@
 </div>
 </div>
 </body>
+<script>
+// Dropdown boxes functionality
+function toggleDropdown(dropdownId, arrowId, btnId) {
+    var dropdown = document.getElementById(dropdownId);
+    var arrow = document.getElementById(arrowId);
+    var btn = document.getElementById(btnId);
+    if (dropdown)
+        dropdown.classList.toggle("hidden");
+    if (arrow)
+        arrow.classList.toggle("rotate-180");
+    if (btn)
+        btn.classList.toggle("border-b-2");
+}
+// Products Button
+document.addEventListener("DOMContentLoaded", function () {
+    var productsBtn = document.getElementById("productsBtn");
+    if (productsBtn) {
+        productsBtn.addEventListener("click", function () {
+            toggleDropdown("productsDropdown", "productsArrow", "productsBtn");
+        });
+    }
+});
+// About Button
+document.addEventListener("DOMContentLoaded", function () {
+    var aboutBtn = document.getElementById("aboutBtn");
+    if (aboutBtn) {
+        aboutBtn.addEventListener("click", function () {
+            toggleDropdown("aboutDropdown", "aboutArrow", "aboutBtn");
+        });
+    }
+});
+// Resource Button
+document.addEventListener("DOMContentLoaded", function () {
+    var resourcesBtn = document.getElementById("resourcesBtn");
+    if (resourcesBtn) {
+        resourcesBtn.addEventListener("click", function () {
+            toggleDropdown("resourcesDropdown", "resourcesArrow", "resourcesBtn");
+        });
+    }
+});
+// Sign-Up Form functionality
+document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("signupForm");
+    var formText = document.getElementById("formText");
+    var successText = document.getElementById("successText");
+    if (!form)
+        return;
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var valid = true;
+        formText.classList.add("hidden");
+        successText.classList.add("hidden");
+        // Grab inputs
+        var inputs = form.querySelectorAll("input");
+        inputs.forEach(function (input) {
+            var element = input;
+            element.classList.remove("border-red-500", "focus:ring-red-500", "text-red-500");
+            element.classList.add("border-black", "focus:ring-[#0360E6]", "text-black");
+            // Empty check
+            if (element.value.trim() === "") {
+                markInvalid(element);
+                valid = false;
+            }
+            // Email validation
+            if (element.type === "email" && !isValidEmail(element.value)) {
+                markInvalid(element);
+                valid = false;
+            }
+            // Phone validation
+            if (element.type === "tel" && !/^\d{10,}$/.test(element.value)) {
+                markInvalid(element);
+                valid = false;
+            }
+        });
+        if (!valid) {
+            formText.classList.remove("hidden");
+            formText.classList.add("text-red-600", "font-semibold");
+            return;
+        }
+        successText.classList.remove("hidden");
+        alert("Form submitted successfully!");
+        form.reset();
+    });
+    function markInvalid(element) {
+        element.classList.remove("border-black", "focus:ring-[#0360E6]", "text-black");
+        element.classList.add("border-red-500", "focus:ring-red-500", "text-red-500");
+    }
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+});
+</script>
 </html>
