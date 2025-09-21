@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         // Success
         successText.classList.remove("hidden");
-        alert("git push origin main --forceForm submitted successfully!");
+        alert("Form submitted successfully!");
         form.reset();
     });
     function markInvalid(element) {

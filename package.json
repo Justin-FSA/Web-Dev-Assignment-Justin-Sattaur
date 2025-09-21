@@ -16,6 +16,7 @@
     "vite": "^7.1.6"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.13"
+    "@tailwindcss/vite": "^4.1.13",
+    "next.js": "^1.0.3"
   }
 }
