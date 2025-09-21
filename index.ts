@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       // Success
       successText.classList.remove("hidden");
-      alert("✅ Form submitted successfully!");
+      alert("Form submitted successfully!");
       form.reset();
     });
   
