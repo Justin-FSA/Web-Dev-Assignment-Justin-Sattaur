@@ -8,6 +8,7 @@ function toggleDropdown(dropdownId: string, arrowId: string, btnId: string): voi
     if (arrow) arrow.classList.toggle("rotate-180");
     if (btn) btn.classList.toggle("border-b-2");
 }
+// Products Button
 document.addEventListener("DOMContentLoaded", () => {
     const productsBtn = document.getElementById("productsBtn");
     if (productsBtn) {
@@ -15,6 +16,24 @@ document.addEventListener("DOMContentLoaded", () => {
             toggleDropdown("productsDropdown", "productsArrow", "productsBtn")
         });
     }
+})
+// About Button
+document.addEventListener("DOMContentLoaded", () => {
+  const aboutBtn = document.getElementById("aboutBtn");
+  if (aboutBtn) {
+    aboutBtn.addEventListener("click", () => {
+          toggleDropdown("aboutDropdown", "aboutArrow", "aboutBtn")
+      });
+  }
+})
+// Resource Button
+document.addEventListener("DOMContentLoaded", () => {
+  const resourcesBtn = document.getElementById("resourcesBtn");
+  if (resourcesBtn) {
+    resourcesBtn.addEventListener("click", () => {
+          toggleDropdown("resourcesDropdown", "resourcesArrow", "resourcesBtn")
+      });
+  }
 })
 
 // Sign-Up Form functionality
@@ -69,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
   
-      // Success
       successText.classList.remove("hidden");
       alert("Form submitted successfully!");
       form.reset();
